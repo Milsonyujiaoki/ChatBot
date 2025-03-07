@@ -10,6 +10,7 @@ teams-ai = "==1.6.0"
 fitz = "*"
 pymupdf = "*"
 pdfplumber = "*"
+chardet = "*"
 
 [dev-packages]
 

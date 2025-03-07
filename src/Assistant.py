@@ -5,7 +5,7 @@ import asyncio
 from openai import APIConnectionError, RateLimitError, APIError, NotFoundError
 
 # Carrega as variáveis de ambiente do arquivo .env
-load_dotenv(dotenv_path=r"C:\Projetos\Pessoal\Microsoft\TESTES\.env")
+load_dotenv(dotenv_path=r"C:\Projetos\Trabalho\ChatBot\ChatBot\.env")
 
 # Define a chave da API
 openai.api_key = os.getenv('OPENAI_API_KEY')
@@ -59,7 +59,7 @@ async def interagir_com_assistente(mensagem_usuario):
     except RateLimitError:
         return "Erro 429: Limite de requisições excedido."
     except APIError as e:
-        return f"Erro na API: {e.http_status}"
+        return f"Erro na API: {str(e)}"
     except NotFoundError:
         return "Erro: Assistente ou thread não encontrados."
 
